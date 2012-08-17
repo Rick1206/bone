@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<title>無標題文件</title>
+<meta charset="utf-8">
+<meta name = "viewport" content = "width=device-width;initial-scale=1.0" />
+<link href="css/base.css" type="text/css" rel="stylesheet" />
+<link href="css/common.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.slider.js"></script>
+</head>
+<body>
+<header>
+<img src="images/logo.jpg" />
+</header>
+<div class="content pa-3">
+<a href="reg.html" class="reg2"></a>
+<h1>艾丽西亚•凯斯</h1>
+<p>艾丽西亚•凯斯是一名出生于美国的创作歌手、音乐制作人、12次格莱美奖得主，同时也是一名演员和是一位忠实的慈善家。凯斯是一位国际艾滋病倡导者和“拯救孩子”组织的共同创办人。凯斯与艺术家乔纳•赛温斯基合作创作了她自己的骨骼先生。请点击这里查看她的创作，了解更多关于她的传奇。</p>
+
+<div class="gallery">
+	<a href="javascript:void(0);" class="icon-left"></a>
+    <div class="gallery-box" id="index">
+    	<ul>
+        	<li><img src="images/demo_gallery.png"/></li><li><img src="images/demo_gallery.png"/></li><li><img src="images/demo_gallery.png"/></li><li><img src="images/demo_gallery.png"/></li>
+        </ul>
+    </div>    
+    <a href="javascript:void(0);" class="icon-right"></a>
+</div>
+
+
+<nav>
+<cite>已有50人支持</cite>
+<a href="#" class="bicon zc"></a><a href="#" class="bicon fs"></a><a href="#" class="bicon fx"></a>
+<ul class="gallery-box-small">
+	<li class="on"><img src="images/demo_gallery_small.png" /></li>
+    <li><img src="images/demo_gallery_small.png" /></li>
+    <li><img src="images/demo_gallery_small.png" /></li>
+    <li><img src="images/demo_gallery_small.png" /></li>
+</ul>
+</nav>
+
+<div class="div_weibo">
+	<h2>评论</h2>
+    <div class="div_weibo_box">
+    	<img src="images/temp_weibo.gif" />
+        <textarea class="rt">添加评论
+        </textarea>
+        <a href="#" class="sub"></a>
+    </div>
+    <ul class="list">
+    	<li>
+        	<img src="images/temp_weibo.gif" />
+            <div class="rbo">hello world</div>
+        </li>
+    </ul>
+</div>
+
+</div>
+<footer>
+<ul>
+	<li><a href="about.html">关于骨头先生</a></li><li class="two on"><a class="arrange-icon"></a><a href="aini.html">中国艺术家的<br/>个性骨头先生</a></li><li><a href="skin.html">健康肌肤必备</a></li><li class="end"><a href="address.html">展览地点</a></li>
+</ul>
+</footer>
+
+<script type="text/javascript">
+$(function(){
+	$.garlleyImg({
+		obj:".gallery-box",
+		btn:".gallery-box-small",
+		prev:".icon-left",
+		next:".icon-right"
+	});
+	
+	
+	var obj_index = document.getElementById("index");
+	if(obj_index.addEventListener)
+	{		
+		var gnStartX = 0;
+		var gnStartY = 0;
+		var gnEndX = 0;
+		var gnEndY = 0;
+		var tobemove = 50;
+		obj_index.addEventListener('touchstart',function(event) {
+		  gnStartX = event.touches[0].pageX;
+		  gnStartY = event.touches[0].pageY;
+		},false);
+		
+		obj_index.addEventListener('touchmove',function(event) {
+		  gnEndX = event.touches[0].pageX;
+		  gnEndY = event.touches[0].pageY;
+		},false);
+		
+		obj_index.addEventListener('touchend',function(event) {
+			if(gnStartX-gnEndX<-tobemove)
+			{
+				$(".icon-left").click();
+			}else if(gnStartX-gnEndX>tobemove)
+			{
+				$(".icon-right").click();
+			}else
+			{   }
+		},false);
+		
+	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+});
+</script>
+</body>
+</html>
